@@ -1,1 +1,1 @@
-"# Echohive" 
+Echohive, a music app for windows.
