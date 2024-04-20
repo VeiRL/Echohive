@@ -12,8 +12,11 @@ public class Echohive extends Application {
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(Echohive.class.getResource("login.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 320, 240);
-        stage.setTitle("EchoHive 0.0.1");
+        stage.setTitle("EchoHive");
         stage.setScene(scene);
+        stage.setResizable(false);
+        stage.setWidth(720);
+        stage.setHeight(512);
         stage.show();
     }
 
