@@ -1,12 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #1F1B24;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #1F1B24;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.echohive.LoginController">
    <children>
       <ImageView fitHeight="727.0" fitWidth="494.0" pickOnBounds="true">
          <image>
@@ -15,19 +19,19 @@
       </ImageView>
       <Pane layoutX="647.0" layoutY="71.0" prefHeight="572.0" prefWidth="536.0" style="-fx-background-color: white; -fx-background-radius: 20; -fx-border-width: 20; -fx-border-radius: 20;">
          <children>
-            <PasswordField layoutX="81.0" layoutY="300.0" prefHeight="41.0" prefWidth="400.0" promptText="Digite sua senha aqui" style="-fx-border-radius: 30; -fx-background-radius: 30; -fx-background-color: #D9D9D9;" />
-            <TextField layoutX="77.0" layoutY="181.0" prefHeight="41.0" prefWidth="400.0" promptText="Digite seu usuario aqui" style="-fx-border-radius: 30; -fx-background-radius: 30; -fx-background-color: #D9D9D9;" />
+            <PasswordField fx:id="loginPasswordField" layoutX="81.0" layoutY="300.0" prefHeight="41.0" prefWidth="400.0" promptText="Digite sua senha aqui" style="-fx-border-radius: 30; -fx-background-radius: 30; -fx-background-color: #D9D9D9;" />
+            <TextField fx:id="loginUserField" layoutX="77.0" layoutY="196.0" prefHeight="41.0" prefWidth="400.0" promptText="Digite seu usuario aqui" style="-fx-border-radius: 30; -fx-background-radius: 30; -fx-background-color: #D9D9D9;" />
             <Label layoutX="84.0" layoutY="56.0" prefHeight="51.0" prefWidth="394.0" text="Bem vindo ao EchoHive">
                <font>
                   <Font name="System Bold" size="35.0" />
                </font>
             </Label>
-            <Label layoutX="120.0" layoutY="107.0" prefHeight="41.0" prefWidth="322.0" text="Conecte-se e deixe suas melodias ganharem vida!">
+            <Label layoutX="116.0" layoutY="87.0" prefHeight="41.0" prefWidth="322.0" text="Conecte-se e deixe suas melodias ganharem vida!">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <Label layoutX="78.0" layoutY="140.0" prefHeight="41.0" prefWidth="63.0" text="Usuario:">
+            <Label layoutX="78.0" layoutY="155.0" prefHeight="41.0" prefWidth="63.0" text="Usuario:">
                <font>
                   <Font size="14.0" />
                </font>
@@ -47,7 +51,7 @@
                   <Font name="System Bold" size="14.0" />
                </font>
             </Label>
-            <Hyperlink layoutX="211.0" layoutY="478.0" text="Crie uma agora!" textFill="#ffa300" underline="true">
+            <Hyperlink fx:id="loginRedirectToRegister" layoutX="211.0" layoutY="478.0" onAction="#switchToRegister" text="Crie uma agora!" textFill="#ffa300" underline="true">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font></Hyperlink>
@@ -56,16 +60,21 @@
                   <Font size="14.0" />
                </font>
             </Label>
-            <Button layoutX="206.0" layoutY="369.0" mnemonicParsing="false" prefHeight="59.0" prefWidth="125.0" style="-fx-background-color: #FED929; -fx-border-radius: 40; -fx-background-radius: 40;" text="Entrar">
+            <Button fx:id="buttonLogin" layoutX="206.0" layoutY="369.0" mnemonicParsing="false" onAction="#loginToHome" prefHeight="59.0" prefWidth="125.0" style="-fx-background-color: #FED929; -fx-border-radius: 40; -fx-background-radius: 40;" text="Entrar">
                <font>
                   <Font name="System Bold" size="20.0" />
                </font>
             </Button>
-            <Hyperlink layoutX="198.0" layoutY="428.0" prefHeight="31.0" prefWidth="158.0" text="Esqueceu a senha?" textFill="#ffa300" underline="true">
+            <Hyperlink fx:id="loginRedirectToPasswordRecovery" layoutX="198.0" layoutY="428.0" prefHeight="31.0" prefWidth="158.0" text="Esqueceu a senha?" textFill="#ffa300" underline="true">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>
             </Hyperlink>
+            <Label fx:id="loginErrorDisplay" layoutX="81.0" layoutY="135.0" textFill="RED">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
          </children>
       </Pane>
       <Label layoutX="106.0" layoutY="137.0" prefHeight="17.0" prefWidth="0.0" />

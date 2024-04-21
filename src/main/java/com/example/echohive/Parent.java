@@ -1,4 +1,5 @@
 package com.example.echohive;
 
-public class Home {
+public class Parent {
+
 }
