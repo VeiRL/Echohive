@@ -1,144 +1,89 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.Pane?>
-<?import javafx.scene.shape.Circle?>
-<?import javafx.scene.shape.Rectangle?>
-<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.echohive.HomeController">
+<AnchorPane prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: orange;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.echohive.Home">
    <children>
-      <ImageView fitHeight="1140.0" fitWidth="1572.0" layoutX="472.0" layoutY="-9.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@Imagens/HiveBg.png" />
-         </image>
-      </ImageView>
-      <AnchorPane layoutY="-9.0" prefHeight="1118.0" prefWidth="635.0" style="-fx-background-color: #1F1B24;">
+      <AnchorPane prefHeight="720.0" prefWidth="323.0" style="-fx-background-color: #1F1B24;">
          <children>
-            <Circle fill="WHITE" layoutX="318.0" layoutY="156.0" radius="120.0" stroke="BLACK" strokeType="INSIDE" />
-            <Label layoutX="155.0" layoutY="284.0" prefHeight="90.0" prefWidth="327.0" text="Nome De Usuario" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+            <Circle fill="DODGERBLUE" layoutX="162.0" layoutY="142.0" radius="100.0" stroke="BLACK" strokeType="INSIDE" />
+            <Label alignment="CENTER" layoutX="62.0" layoutY="251.0" prefHeight="37.0" prefWidth="200.0" text="Usuario" textAlignment="CENTER" textFill="WHITE">
                <font>
-                  <Font name="System Bold" size="39.0" />
+                  <Font name="System Bold" size="27.0" />
                </font>
             </Label>
-            <Label layoutX="225.0" layoutY="346.0" prefHeight="90.0" prefWidth="186.0" text="Descriçao curta" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+            <Label alignment="CENTER" layoutX="62.0" layoutY="290.0" prefHeight="37.0" prefWidth="200.0" text="Descriçao" textAlignment="CENTER" textFill="WHITE">
                <font>
-                  <Font name="System Bold" size="25.0" />
+                  <Font name="System Bold" size="21.0" />
                </font>
             </Label>
-            <Label layoutX="136.0" layoutY="477.0" prefHeight="90.0" prefWidth="74.0" text="Inicio" textAlignment="CENTER" textFill="WHITE" wrapText="true">
-               <font>
-                  <Font name="System Bold" size="25.0" />
-               </font>
-            </Label>
-            <Label layoutX="136.0" layoutY="559.0" prefHeight="90.0" prefWidth="105.0" text="Explorar" textAlignment="CENTER" textFill="WHITE" wrapText="true">
-               <font>
-                  <Font name="System Bold" size="25.0" />
-               </font>
-            </Label>
-            <Label layoutX="136.0" layoutY="649.0" prefHeight="90.0" prefWidth="105.0" text="Curtidas" textAlignment="CENTER" textFill="WHITE" wrapText="true">
-               <font>
-                  <Font name="System Bold" size="25.0" />
-               </font>
-            </Label>
-            <ImageView fitHeight="63.0" fitWidth="63.0" layoutX="69.0" layoutY="474.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@Imagens/Icon/2.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="63.0" fitWidth="63.0" layoutX="69.0" layoutY="573.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@Imagens/Icon/3.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="63.0" fitWidth="63.0" layoutX="69.0" layoutY="663.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@Imagens/Icon/4.png" />
-               </image>
-            </ImageView>
-            <Pane layoutX="30.0" layoutY="428.0" prefHeight="7.0" prefWidth="560.0" style="-fx-background-color: white;" />
-         </children>
-      </AnchorPane>
-      <Pane layoutX="105.0" layoutY="892.0" prefHeight="120.0" prefWidth="1834.0" style="-fx-background-color: white; -fx-border-radius: 15; -fx-background-radius: 15;">
+            <Separator layoutX="7.0" layoutY="328.0" prefHeight="13.0" prefWidth="305.0" />
+            <HBox layoutX="12.0" layoutY="341.0" prefHeight="50.0" prefWidth="289.0">
+               <children>
+                  <ImageView fitHeight="54.0" fitWidth="72.0" pickOnBounds="true" preserveRatio="true" />
+                  <Label alignment="CENTER" prefHeight="54.0" prefWidth="153.0" text="Home" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="21.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox layoutX="12.0" layoutY="395.0" prefHeight="50.0" prefWidth="289.0">
+               <children>
+                  <ImageView fitHeight="54.0" fitWidth="72.0" pickOnBounds="true" preserveRatio="true" />
+                  <Label alignment="CENTER" prefHeight="54.0" prefWidth="153.0" text="Search" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="21.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <Pane layoutX="-100.0" layoutY="-15.0" prefHeight="200.0" prefWidth="200.0" />
+         </children></AnchorPane>
+      <ScrollPane layoutX="348.0" layoutY="69.0" prefHeight="611.0" prefWidth="932.0">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="1089.0" prefWidth="895.0">
+               <children>
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" height="200.0" layoutX="33.0" layoutY="24.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" height="200.0" layoutX="233.0" layoutY="24.0" stroke="BLACK" strokeType="INSIDE" width="200.0" AnchorPane.leftAnchor="253.0" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" height="200.0" layoutX="253.0" layoutY="24.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" height="200.0" layoutX="696.0" layoutY="24.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" height="200.0" layoutX="476.0" layoutY="24.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" height="200.0" layoutX="476.0" layoutY="235.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" height="200.0" layoutX="696.0" layoutY="235.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" height="200.0" layoutX="253.0" layoutY="235.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" height="200.0" layoutX="33.0" layoutY="235.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" height="200.0" layoutX="35.0" layoutY="670.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" height="200.0" layoutX="255.0" layoutY="670.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" height="200.0" layoutX="698.0" layoutY="670.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" height="200.0" layoutX="478.0" layoutY="670.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" height="200.0" layoutX="478.0" layoutY="459.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" height="200.0" layoutX="698.0" layoutY="459.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" height="200.0" layoutX="255.0" layoutY="459.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" height="200.0" layoutX="35.0" layoutY="459.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
+               </children>
+            </AnchorPane>
+        </content>
+      </ScrollPane>
+      <Label alignment="TOP_LEFT" layoutX="348.0" layoutY="20.0" prefHeight="39.0" prefWidth="222.0" text="Músicas curtidas" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="27.0" />
+         </font>
+      </Label>
+      <Pane layoutX="348.0" layoutY="53.0" prefHeight="6.0" prefWidth="222.0" style="-fx-background-color: black; -fx-border-radius: 50; -fx-background-radius: 50;" />
+      <Pane layoutX="37.0" layoutY="644.0" prefHeight="62.0" prefWidth="1222.0" style="-fx-background-color: white; -fx-border-radius: 35; -fx-background-radius: 35;">
          <children>
-            <ImageView fitHeight="96.0" fitWidth="93.0" layoutX="695.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@Imagens/Icon/5.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="81.0" fitWidth="71.0" layoutX="804.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@Imagens/Icon/6.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="81.0" fitWidth="71.0" layoutX="611.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@Imagens/Icon/7.png" />
-               </image>
-            </ImageView>
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#616161" height="84.0" layoutX="21.0" layoutY="15.0" stroke="BLACK" strokeType="INSIDE" width="84.0" />
-            <Label layoutX="114.0" layoutY="25.0" prefHeight="36.0" prefWidth="217.0" text="[Titulo da música]" textAlignment="CENTER" wrapText="true">
-               <font>
-                  <Font name="System Bold" size="25.0" />
-               </font>
-            </Label>
-            <Label layoutX="114.0" layoutY="57.0" prefHeight="36.0" prefWidth="74.0" text="Autor" textAlignment="CENTER" wrapText="true">
-               <font>
-                  <Font name="System Bold" size="25.0" />
-               </font>
-            </Label>
+            <Slider layoutX="403.0" layoutY="24.0" prefHeight="14.0" prefWidth="726.0" />
+            <Label layoutX="1154.0" layoutY="23.0" text="00:00" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" height="45.0" layoutX="31.0" layoutY="9.0" stroke="BLACK" strokeType="INSIDE" width="45.0" />
          </children>
       </Pane>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="289.0" layoutX="677.0" layoutY="136.0" stroke="BLACK" strokeType="INSIDE" width="289.0" AnchorPane.bottomAnchor="684.0" AnchorPane.leftAnchor="677.0" AnchorPane.rightAnchor="1078.0" AnchorPane.topAnchor="136.0" />
-      <Label layoutX="698.0" layoutY="315.0" prefHeight="90.0" prefWidth="105.0" text="Title" textAlignment="CENTER" wrapText="true">
-         <font>
-            <Font name="System Bold" size="25.0" />
-         </font>
-      </Label>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="289.0" layoutX="988.0" layoutY="136.0" stroke="BLACK" strokeType="INSIDE" width="289.0" />
-      <Label layoutX="1009.0" layoutY="315.0" prefHeight="90.0" prefWidth="105.0" text="Title" textAlignment="CENTER" wrapText="true">
-         <font>
-            <Font name="System Bold" size="25.0" />
-         </font>
-      </Label>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="289.0" layoutX="1298.0" layoutY="136.0" stroke="BLACK" strokeType="INSIDE" width="289.0" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="289.0" layoutX="1299.0" layoutY="459.0" stroke="BLACK" strokeType="INSIDE" width="289.0" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="289.0" layoutX="989.0" layoutY="459.0" stroke="BLACK" strokeType="INSIDE" width="289.0" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="289.0" layoutX="678.0" layoutY="459.0" stroke="BLACK" strokeType="INSIDE" width="289.0" />
-      <Label layoutX="1319.0" layoutY="315.0" prefHeight="90.0" prefWidth="105.0" text="Title" textAlignment="CENTER" wrapText="true">
-         <font>
-            <Font name="System Bold" size="25.0" />
-         </font>
-      </Label>
-      <Label layoutX="1320.0" layoutY="638.0" prefHeight="90.0" prefWidth="105.0" text="Title" textAlignment="CENTER" wrapText="true">
-         <font>
-            <Font name="System Bold" size="25.0" />
-         </font>
-      </Label>
-      <Label layoutX="1010.0" layoutY="638.0" prefHeight="90.0" prefWidth="105.0" text="Title" textAlignment="CENTER" wrapText="true">
-         <font>
-            <Font name="System Bold" size="25.0" />
-         </font>
-      </Label>
-      <Label layoutX="699.0" layoutY="638.0" prefHeight="90.0" prefWidth="105.0" text="Title" textAlignment="CENTER" wrapText="true">
-         <font>
-            <Font name="System Bold" size="25.0" />
-         </font>
-      </Label>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="289.0" layoutX="1611.0" layoutY="459.0" stroke="BLACK" strokeType="INSIDE" width="289.0" />
-      <Label layoutX="1632.0" layoutY="638.0" prefHeight="90.0" prefWidth="105.0" text="Title" textAlignment="CENTER" wrapText="true">
-         <font>
-            <Font name="System Bold" size="25.0" />
-         </font>
-      </Label>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="289.0" layoutX="1610.0" layoutY="136.0" stroke="BLACK" strokeType="INSIDE" width="289.0" />
-      <Label layoutX="1631.0" layoutY="315.0" prefHeight="90.0" prefWidth="105.0" text="Title" textAlignment="CENTER" wrapText="true">
-         <font>
-            <Font name="System Bold" size="25.0" />
-         </font>
-      </Label>
    </children>
 </AnchorPane>
