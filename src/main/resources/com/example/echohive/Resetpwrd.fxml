@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="403.0" prefWidth="606.0" style="-fx-border-radius: 25; -fx-background-radius: 25;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ForgetPwrd">
+   <children>
+      <Label alignment="CENTER" layoutX="97.0" layoutY="40.0" prefHeight="78.0" prefWidth="413.0" text="Redefina sua Senha">
+         <font>
+            <Font name="System Bold" size="41.0" />
+         </font>
+      </Label>
+      <TextField layoutX="62.0" layoutY="147.0" prefHeight="39.0" prefWidth="483.0" promptText="Insira sua nova senha aqui" style="-fx-border-radius: 35; -fx-background-radius: 35; -fx-background-color: #D9D9D9;" />
+      <Button layoutX="219.0" layoutY="288.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="169.0" style="-fx-border-radius: 34; -fx-background-radius: 34; -fx-background-color: #FED929;" text="Continuar">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Button>
+      <TextField layoutX="62.0" layoutY="218.0" prefHeight="39.0" prefWidth="483.0" promptText="Confirme sua nova senha" style="-fx-border-radius: 35; -fx-background-radius: 35; -fx-background-color: #D9D9D9;" />
+   </children>
+</AnchorPane>

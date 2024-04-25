@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="403.0" prefWidth="606.0" style="-fx-border-radius: 25; -fx-background-radius: 25;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ForgetPwrd">
+   <children>
+      <Label alignment="CENTER" layoutX="97.0" layoutY="14.0" prefHeight="78.0" prefWidth="413.0" text="Esqueci minha senha">
+         <font>
+            <Font name="System Bold" size="41.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="97.0" layoutY="53.0" prefHeight="78.0" prefWidth="413.0" text="Enviamos um código para seu endereço de email">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="97.0" layoutY="117.0" prefHeight="28.0" prefWidth="169.0" text="Não recebeu o código? ">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Hyperlink layoutX="258.0" layoutY="117.0" text="Reenviar" textFill="#ffae00">
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font>
+      </Hyperlink>
+      <TextField layoutX="62.0" layoutY="182.0" prefHeight="39.0" prefWidth="483.0" promptText="Insira o código aqui" style="-fx-border-radius: 35; -fx-background-radius: 35; -fx-background-color: #D9D9D9;" />
+      <Button layoutX="208.0" layoutY="253.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="169.0" style="-fx-border-radius: 34; -fx-background-radius: 34; -fx-background-color: #FED929;" text="Continuar">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

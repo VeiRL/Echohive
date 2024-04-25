@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: orange;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.echohive.Home">
+   <children>
+      <AnchorPane layoutY="164.0" prefHeight="556.0" prefWidth="1483.0" style="-fx-background-color: #1F1B24;">
+         <children>
+            <Circle fill="DODGERBLUE" layoutX="176.0" layoutY="85.0" radius="71.0" stroke="BLACK" strokeType="INSIDE" />
+            <Label alignment="CENTER" layoutX="76.0" layoutY="166.0" prefHeight="37.0" prefWidth="200.0" text="Usuario" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="27.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="76.0" layoutY="205.0" prefHeight="37.0" prefWidth="200.0" text="Descriçao" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Separator layoutX="24.0" layoutY="255.0" prefHeight="13.0" prefWidth="305.0" />
+            <HBox layoutX="32.0" layoutY="262.0" prefHeight="50.0" prefWidth="289.0">
+               <children>
+                  <ImageView fitHeight="54.0" fitWidth="72.0" pickOnBounds="true" preserveRatio="true" />
+                  <Label alignment="CENTER" prefHeight="54.0" prefWidth="153.0" text="Home" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="21.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox layoutX="32.0" layoutY="316.0" prefHeight="50.0" prefWidth="289.0">
+               <children>
+                  <ImageView fitHeight="54.0" fitWidth="72.0" pickOnBounds="true" preserveRatio="true" />
+                  <Label alignment="CENTER" prefHeight="54.0" prefWidth="153.0" text="Search" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="21.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <Pane layoutX="-100.0" layoutY="-15.0" prefHeight="200.0" prefWidth="200.0" />
+            <Pane layoutX="361.0" layoutY="28.0" prefHeight="3.0" prefWidth="1041.0" style="-fx-background-color: white; -fx-border-radius: 50; -fx-background-radius: 50;" />
+            <Label alignment="TOP_LEFT" layoutX="361.0" layoutY="-5.0" prefHeight="39.0" prefWidth="222.0" text="Músicas Enviadas" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="27.0" />
+               </font>
+            </Label>
+            <Button layoutX="83.0" layoutY="395.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="188.0" style="-fx-border-radius: 30; -fx-background-radius: 30; -fx-background-color: #FED929;" text="Importar Músicas">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+         </children></AnchorPane>
+      <ScrollPane layoutX="353.0" layoutY="208.0" prefHeight="472.0" prefWidth="924.0">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="1089.0" prefWidth="895.0">
+               <children>
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" height="200.0" layoutX="33.0" layoutY="24.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" height="200.0" layoutX="233.0" layoutY="24.0" stroke="BLACK" strokeType="INSIDE" width="200.0" AnchorPane.leftAnchor="253.0" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" height="200.0" layoutX="253.0" layoutY="24.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" height="200.0" layoutX="696.0" layoutY="24.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" height="200.0" layoutX="476.0" layoutY="24.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" height="200.0" layoutX="476.0" layoutY="235.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" height="200.0" layoutX="696.0" layoutY="235.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" height="200.0" layoutX="253.0" layoutY="235.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" height="200.0" layoutX="33.0" layoutY="235.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" height="200.0" layoutX="35.0" layoutY="670.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" height="200.0" layoutX="255.0" layoutY="670.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" height="200.0" layoutX="698.0" layoutY="670.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" height="200.0" layoutX="478.0" layoutY="670.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" height="200.0" layoutX="478.0" layoutY="459.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" height="200.0" layoutX="698.0" layoutY="459.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" height="200.0" layoutX="255.0" layoutY="459.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" height="200.0" layoutX="35.0" layoutY="459.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
+               </children>
+            </AnchorPane>
+        </content>
+      </ScrollPane>
+      <Pane layoutX="37.0" layoutY="644.0" prefHeight="62.0" prefWidth="1394.0" style="-fx-background-color: white; -fx-border-radius: 35; -fx-background-radius: 35;">
+         <children>
+            <Slider layoutX="403.0" layoutY="24.0" prefHeight="14.0" prefWidth="726.0" />
+            <Label layoutX="1328.0" layoutY="23.0" text="00:00" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" height="45.0" layoutX="31.0" layoutY="9.0" stroke="BLACK" strokeType="INSIDE" width="45.0" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

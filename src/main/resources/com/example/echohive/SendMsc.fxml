@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane prefHeight="738.0" prefWidth="730.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="SendMsc">
+   <children>
+      <Label alignment="CENTER" layoutX="159.0" layoutY="50.0" prefHeight="78.0" prefWidth="413.0" text="Envie suas músicas ">
+         <font>
+            <Font name="System Bold" size="41.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="159.0" layoutY="97.0" prefHeight="78.0" prefWidth="413.0" text="para EchoHive">
+         <font>
+            <Font name="System Bold" size="41.0" />
+         </font>
+      </Label>
+      <TextField layoutX="97.0" layoutY="213.0" prefHeight="55.0" prefWidth="537.0" promptText="Titulo da musica" style="-fx-border-radius: 35; -fx-background-radius: 35; -fx-background-color: #D9D9D9;" />
+      <TextField layoutX="97.0" layoutY="314.0" prefHeight="55.0" prefWidth="537.0" promptText="Autor" style="-fx-border-radius: 35; -fx-background-radius: 35; -fx-background-color: #D9D9D9;" />
+      <Button layoutX="259.0" layoutY="483.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="212.0" style="-fx-border-radius: 34; -fx-background-radius: 34; -fx-background-color: #FED929;" text="Explorar arquivos">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Button>
+      <Button layoutX="276.0" layoutY="575.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="180.0" style="-fx-border-radius: 34; -fx-background-radius: 34; -fx-background-color: #FED929;" text="Enviar">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
