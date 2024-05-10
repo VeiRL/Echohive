@@ -3,6 +3,7 @@ package com.example.echohive;
 //Register function still unfinished
 
 import java.io.IOException;
+import java.util.Objects;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -16,8 +17,6 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 public class RegisterController {
-    private Parent root;
-    private Stage stage;
 
     @FXML
     private Button buttonRegister;
@@ -42,7 +41,10 @@ public class RegisterController {
     }
 
     public void switchToLogin(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(getClass().getResource("login.fxml"));
+        Parent root;
+        Stage stage;
+
+        root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("login.fxml")));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         stage.getScene().setRoot(root);
         stage.show();
