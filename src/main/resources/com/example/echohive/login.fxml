@@ -65,11 +65,6 @@
                   <Font name="System Bold" size="20.0" />
                </font>
             </Button>
-            <Hyperlink fx:id="loginRedirectToPasswordRecovery" layoutX="198.0" layoutY="428.0" prefHeight="31.0" prefWidth="158.0" text="Esqueceu a senha?" textFill="#ffa300" underline="true">
-               <font>
-                  <Font name="System Bold" size="16.0" />
-               </font>
-            </Hyperlink>
             <Label fx:id="loginErrorDisplay" layoutX="81.0" layoutY="135.0" textFill="RED">
                <font>
                   <Font size="18.0" />
