@@ -1,5 +1,6 @@
 package com.example.echohive.DBManager;
 
+import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -23,6 +24,9 @@ public class Manager {
             Path path = Paths.get("./data");
             if (!Files.exists(path))
                 Files.createDirectory(path);
+            path = Paths.get("./data/Songs");
+            if (!Files.exists((path)))
+                Files.createDirectory((path));
 
             connect = DriverManager.getConnection(dbLocation);
             Statement statement = connect.createStatement();
@@ -42,22 +46,23 @@ public class Manager {
 
             statement.close();
         } catch (SQLException | IOException e){
-            System.err.println(e.getMessage());
+            System.out.println(e.getMessage());
         } finally {
             try{
                 if (connect != null)
                     connect.close();
             } catch (SQLException e){
-                System.err.println(e.getMessage());
+                System.out.println(e.getMessage());
             }
         }
     }
 
+    //region Users Table Functions
     public static void newUser(String name, String password){
         try{
             Users.newUser(name, null, password);
         } catch (SQLException e){
-            System.err.println(e.getMessage());
+            System.out.println(e.getMessage());
         }
     }
 
@@ -65,7 +70,7 @@ public class Manager {
         try{
             Users.newUser(name, email, password);
         } catch (SQLException e){
-            System.err.println(e.getMessage());
+            System.out.println(e.getMessage());
         }
     }
 
@@ -79,7 +84,7 @@ public class Manager {
         try {
             data = Users.getUserDataByName(name);
         }catch (SQLException e){
-            System.err.println(e.getMessage());
+            System.out.println(e.getMessage());
         }
 
         return data;
@@ -95,7 +100,42 @@ public class Manager {
         try{
             Users.setColumnForUserByName(name, columnType, data);
         }catch (SQLException e){
-            System.err.println("ERROR SET COLUMN: " + e.getMessage());
+            System.out.println(e.getMessage());
+        }
+    }
+    //endregion
+
+    public static void addSong(String title, String author, File song){
+        try{
+            Songs.addSong(title, author, song);
+        } catch (SQLException | IOException e){
+            System.out.println(e.getMessage());
+        }
+    }
+
+    public static String getSongLocationByTitle(String title){
+        String path = null;
+        try{
+            path = Songs.getSongLocationByTitle(title);
+        } catch (SQLException e){
+            System.out.println(e.getMessage());
+        }
+        return path;
+    }
+
+    public static void deleteSongByTitle(String title){
+        try{
+            Songs.deleteSongByTitle(title);
+        }catch (SQLException | IOException e){
+            System.out.println(e.getMessage());
+        }
+    }
+
+    public static void setSongTitleByTitle(String title, String newTitle){
+        try{
+            Songs.setSongTitleByTitle(title, newTitle);
+        } catch (SQLException e){
+            System.out.println(e.getMessage());
         }
     }
 }

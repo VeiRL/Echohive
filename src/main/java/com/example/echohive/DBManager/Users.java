@@ -25,6 +25,8 @@ public class Users {
         PreparedStatement preparedStatement = connection.prepareStatement("SELECT name, bio, email, password FROM Users WHERE name = ?");
         preparedStatement.setString(1, name);
         ResultSet rs = preparedStatement.executeQuery();
+        if (!rs.isBeforeFirst())
+            return data;
 
         data[0] = rs.getString("name");
         data[1] = rs.getString("bio");
