@@ -29,10 +29,6 @@ public class LoginController {
     @FXML
     private TextField loginUserField;
 
-    public TextField getLoginUserField() {
-        return loginUserField;
-    }
-
     @FXML
     private Label loginErrorDisplay;
 

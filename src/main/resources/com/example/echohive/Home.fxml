@@ -18,7 +18,7 @@
       <AnchorPane prefHeight="720.0" prefWidth="323.0" style="-fx-background-color: #1F1B24;">
          <children>
             <Circle fx:id="userProfilePic" fill="DODGERBLUE" layoutX="162.0" layoutY="142.0" radius="100.0" stroke="BLACK" strokeType="INSIDE" />
-            <Hyperlink fx:id="username" layoutX="103.0" layoutY="242.0" onAction="#homeToProfile" text="Usuário" textAlignment="CENTER" textFill="WHITE">
+            <Hyperlink fx:id="username" layoutX="103.0" layoutY="242.0" onAction="#homeToProfile" style="-fx-border-color: transparent;" text="Usuário" textAlignment="CENTER" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="27.0" />
                </font>
@@ -32,7 +32,7 @@
             <HBox layoutX="12.0" layoutY="341.0" prefHeight="50.0" prefWidth="289.0">
                <children>
                   <ImageView fitHeight="54.0" fitWidth="72.0" pickOnBounds="true" preserveRatio="true" />
-                  <Label alignment="CENTER" prefHeight="54.0" prefWidth="153.0" text="Home" textAlignment="CENTER" textFill="WHITE">
+                  <Label alignment="CENTER" prefHeight="54.0" prefWidth="154.0" text="Home" textAlignment="CENTER" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="21.0" />
                      </font>
@@ -42,11 +42,11 @@
             <HBox layoutX="12.0" layoutY="395.0" prefHeight="50.0" prefWidth="289.0">
                <children>
                   <ImageView fitHeight="54.0" fitWidth="72.0" pickOnBounds="true" preserveRatio="true" />
-                  <Label fx:id="searchButton" alignment="CENTER" onMouseClicked="#homeToSearch" prefHeight="54.0" prefWidth="153.0" text="Search" textAlignment="CENTER" textFill="WHITE">
+                  <Hyperlink fx:id="searchButton" alignment="CENTER" prefHeight="50.0" prefWidth="150.0" style="-fx-border-color: transparent;" text="Search" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="21.0" />
                      </font>
-                  </Label>
+                  </Hyperlink>
                </children>
             </HBox>
             <Pane layoutX="-100.0" layoutY="-15.0" prefHeight="200.0" prefWidth="200.0" />

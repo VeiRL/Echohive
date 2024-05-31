@@ -40,11 +40,12 @@ public class MainController {
         }
     }
 
-    public static void loadPopup(String popupSceneName) throws IOException {
+    public static void loadPopup(String popupSceneName, String windowName) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(Echohive.class.getResource(popupSceneName));
         Parent root1 = (Parent) fxmlLoader.load();
         Stage stage = new Stage();
 
+        stage.setTitle(windowName);
         stage.setScene(new Scene(root1));
         stage.show();
     }

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.Separator?>
@@ -32,21 +33,21 @@
             <HBox layoutX="32.0" layoutY="262.0" prefHeight="50.0" prefWidth="289.0">
                <children>
                   <ImageView fitHeight="54.0" fitWidth="72.0" pickOnBounds="true" preserveRatio="true" />
-                  <Label fx:id="homeButton" alignment="CENTER" onMouseClicked="#switchToHome" prefHeight="54.0" prefWidth="153.0" text="Home" textAlignment="CENTER" textFill="WHITE">
+                  <Hyperlink fx:id="homeButton" alignment="CENTER" onAction="#switchToHome" prefHeight="50.0" prefWidth="150.0" style="-fx-border-color: transparent;" text="Home" textAlignment="CENTER" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="21.0" />
                      </font>
-                  </Label>
+                  </Hyperlink>
                </children>
             </HBox>
             <HBox layoutX="32.0" layoutY="316.0" prefHeight="50.0" prefWidth="289.0">
                <children>
                   <ImageView fitHeight="54.0" fitWidth="72.0" pickOnBounds="true" preserveRatio="true" />
-                  <Label fx:id="searchButton" alignment="CENTER" prefHeight="54.0" prefWidth="153.0" text="Search" textAlignment="CENTER" textFill="WHITE">
+                  <Hyperlink fx:id="searchButton" alignment="CENTER" onAction="#switchToSearch" prefHeight="50.0" prefWidth="150.0" text="Search" textAlignment="CENTER" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="21.0" />
                      </font>
-                  </Label>
+                  </Hyperlink>
                </children>
             </HBox>
             <Pane layoutX="-100.0" layoutY="-15.0" prefHeight="200.0" prefWidth="200.0" />

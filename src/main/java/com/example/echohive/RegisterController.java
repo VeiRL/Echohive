@@ -74,6 +74,7 @@ public class RegisterController {
             }
 
             connection.close();
+            pst.close();
             rs.close();
 
         } catch (Exception e) {

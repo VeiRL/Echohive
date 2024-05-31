@@ -13,20 +13,16 @@ import javafx.scene.shape.Circle;
 public class HomeController {
 
     @FXML
-    private Label searchButton;
-
-    @FXML
-    private Circle userProfilePic;
+    private Hyperlink searchButton;
 
     @FXML
     private Hyperlink username;
 
     @FXML
-    private Label usrShortDesc;
-    
-    public void userinfo() {
+    private Circle userProfilePic;
 
-    }
+    @FXML
+    private Label usrShortDesc;
 
     public void homeToProfile(ActionEvent event) throws IOException {
         MainController.switchScenes("Profile.fxml", username);

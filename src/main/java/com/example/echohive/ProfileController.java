@@ -4,18 +4,19 @@ import java.io.IOException;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.Hyperlink;
 import javafx.scene.control.Label;
 
 public class ProfileController {
-
-    @FXML
-    private Label homeButton;
-
+    
     @FXML
     private Button importSongs;
 
     @FXML
-    private Label searchButton;
+    private Hyperlink homeButton;
+
+    @FXML
+    private Hyperlink searchButton;
 
     @FXML
     private Label userBio;
@@ -33,7 +34,7 @@ public class ProfileController {
 
     @FXML
     public void sendMscPopup() throws IOException {
-        MainController.loadPopup("SendMsc.fxml");
+        MainController.loadPopup("SendMsc.fxml", "Enviar Musica");
     }
 
 }
