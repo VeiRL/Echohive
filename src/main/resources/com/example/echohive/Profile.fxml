@@ -1,25 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.text.*?>
-<?import javafx.scene.shape.*?>
-<?import javafx.scene.image.*?>
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: orange;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.echohive.Home">
+<AnchorPane prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: orange;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.echohive.ProfileController">
    <children>
       <AnchorPane layoutY="164.0" prefHeight="556.0" prefWidth="1483.0" style="-fx-background-color: #1F1B24;">
          <children>
             <Circle fill="DODGERBLUE" layoutX="176.0" layoutY="85.0" radius="71.0" stroke="BLACK" strokeType="INSIDE" />
-            <Label alignment="CENTER" layoutX="76.0" layoutY="166.0" prefHeight="37.0" prefWidth="200.0" text="Usuario" textAlignment="CENTER" textFill="WHITE">
+            <Label fx:id="username" alignment="CENTER" layoutX="76.0" layoutY="166.0" prefHeight="37.0" prefWidth="200.0" text="Usuario" textAlignment="CENTER" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="27.0" />
                </font>
             </Label>
-            <Label alignment="CENTER" layoutX="76.0" layoutY="205.0" prefHeight="37.0" prefWidth="200.0" text="Descriçao" textAlignment="CENTER" textFill="WHITE">
+            <Label fx:id="userBio" alignment="CENTER" layoutX="76.0" layoutY="205.0" prefHeight="37.0" prefWidth="200.0" text="Descriçao" textAlignment="CENTER" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="15.0" />
                </font>
@@ -28,21 +33,21 @@
             <HBox layoutX="32.0" layoutY="262.0" prefHeight="50.0" prefWidth="289.0">
                <children>
                   <ImageView fitHeight="54.0" fitWidth="72.0" pickOnBounds="true" preserveRatio="true" />
-                  <Label alignment="CENTER" prefHeight="54.0" prefWidth="153.0" text="Home" textAlignment="CENTER" textFill="WHITE">
+                  <Hyperlink fx:id="homeButton" alignment="CENTER" onAction="#switchToHome" prefHeight="50.0" prefWidth="150.0" style="-fx-border-color: transparent;" text="Home" textAlignment="CENTER" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="21.0" />
                      </font>
-                  </Label>
+                  </Hyperlink>
                </children>
             </HBox>
             <HBox layoutX="32.0" layoutY="316.0" prefHeight="50.0" prefWidth="289.0">
                <children>
                   <ImageView fitHeight="54.0" fitWidth="72.0" pickOnBounds="true" preserveRatio="true" />
-                  <Label alignment="CENTER" prefHeight="54.0" prefWidth="153.0" text="Search" textAlignment="CENTER" textFill="WHITE">
+                  <Hyperlink fx:id="searchButton" alignment="CENTER" onAction="#switchToSearch" prefHeight="50.0" prefWidth="150.0" text="Search" textAlignment="CENTER" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="21.0" />
                      </font>
-                  </Label>
+                  </Hyperlink>
                </children>
             </HBox>
             <Pane layoutX="-100.0" layoutY="-15.0" prefHeight="200.0" prefWidth="200.0" />
@@ -52,7 +57,7 @@
                   <Font name="System Bold" size="27.0" />
                </font>
             </Label>
-            <Button layoutX="83.0" layoutY="395.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="188.0" style="-fx-border-radius: 30; -fx-background-radius: 30; -fx-background-color: #FED929;" text="Importar Músicas">
+            <Button fx:id="importSongs" layoutX="83.0" layoutY="395.0" mnemonicParsing="false" onAction="#sendMscPopup" prefHeight="45.0" prefWidth="188.0" style="-fx-border-radius: 30; -fx-background-radius: 30; -fx-background-color: #FED929;" text="Importar Músicas">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>

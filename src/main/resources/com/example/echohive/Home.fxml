@@ -1,25 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.text.*?>
-<?import javafx.scene.shape.*?>
-<?import javafx.scene.image.*?>
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: orange;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.echohive.Home">
+<AnchorPane prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: orange;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.echohive.HomeController">
    <children>
       <AnchorPane prefHeight="720.0" prefWidth="323.0" style="-fx-background-color: #1F1B24;">
          <children>
-            <Circle fill="DODGERBLUE" layoutX="162.0" layoutY="142.0" radius="100.0" stroke="BLACK" strokeType="INSIDE" />
-            <Label alignment="CENTER" layoutX="62.0" layoutY="251.0" prefHeight="37.0" prefWidth="200.0" text="Usuario" textAlignment="CENTER" textFill="WHITE">
+            <Circle fx:id="userProfilePic" fill="DODGERBLUE" layoutX="162.0" layoutY="142.0" radius="100.0" stroke="BLACK" strokeType="INSIDE" />
+            <Hyperlink fx:id="username" layoutX="103.0" layoutY="242.0" onAction="#homeToProfile" style="-fx-border-color: transparent;" text="Usuário" textAlignment="CENTER" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="27.0" />
                </font>
-            </Label>
-            <Label alignment="CENTER" layoutX="62.0" layoutY="290.0" prefHeight="37.0" prefWidth="200.0" text="Descriçao" textAlignment="CENTER" textFill="WHITE">
+            </Hyperlink>
+            <Label fx:id="usrShortDesc" alignment="CENTER" layoutX="62.0" layoutY="290.0" prefHeight="37.0" prefWidth="200.0" text="Descriçao" textAlignment="CENTER" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="21.0" />
                </font>
@@ -28,7 +32,7 @@
             <HBox layoutX="12.0" layoutY="341.0" prefHeight="50.0" prefWidth="289.0">
                <children>
                   <ImageView fitHeight="54.0" fitWidth="72.0" pickOnBounds="true" preserveRatio="true" />
-                  <Label alignment="CENTER" prefHeight="54.0" prefWidth="153.0" text="Home" textAlignment="CENTER" textFill="WHITE">
+                  <Label alignment="CENTER" prefHeight="54.0" prefWidth="154.0" text="Home" textAlignment="CENTER" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="21.0" />
                      </font>
@@ -38,11 +42,11 @@
             <HBox layoutX="12.0" layoutY="395.0" prefHeight="50.0" prefWidth="289.0">
                <children>
                   <ImageView fitHeight="54.0" fitWidth="72.0" pickOnBounds="true" preserveRatio="true" />
-                  <Label alignment="CENTER" prefHeight="54.0" prefWidth="153.0" text="Search" textAlignment="CENTER" textFill="WHITE">
+                  <Hyperlink fx:id="searchButton" alignment="CENTER" prefHeight="50.0" prefWidth="150.0" style="-fx-border-color: transparent;" text="Search" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="21.0" />
                      </font>
-                  </Label>
+                  </Hyperlink>
                </children>
             </HBox>
             <Pane layoutX="-100.0" layoutY="-15.0" prefHeight="200.0" prefWidth="200.0" />
