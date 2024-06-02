@@ -61,4 +61,60 @@ public class Users {
         preparedStatement.close();
         connection.close();
     }
+
+    public static String[] getTitlesOfLikedSongsByName(String name) throws SQLException{
+        Connection connection = DriverManager.getConnection(Manager.dbLocation);
+        PreparedStatement preparedStatement = connection.prepareStatement("SELECT liked FROM Users WHERE name = ?");
+        preparedStatement.setString(1, name);
+        ResultSet rs = preparedStatement.executeQuery();
+
+        if (rs.getString("liked") == null) {
+            preparedStatement.close();
+            connection.close();
+            rs.close();
+
+            return null;
+        }
+
+        String[] data = rs.getString("liked").split(",");
+
+        preparedStatement.close();
+        connection.close();
+        rs.close();
+
+        return data;
+    }
+
+    public static void addLikedSongsByName(String name, String titleLiked) throws SQLException{
+        Connection connection = DriverManager.getConnection(Manager.dbLocation);
+        PreparedStatement preparedStatement = connection.prepareStatement("UPDATE Users SET liked = ? WHERE name = ?");
+
+        String[] data = getTitlesOfLikedSongsByName(name);
+        if (data == null) {
+            preparedStatement.setString(1, titleLiked + ",");
+
+        } else {
+            String[] newData = new String[data.length + 1];
+
+            for(int i = 0;i < newData.length;i++){
+                if (i < data.length)
+                    newData[i] = data[i];
+                else newData[i] = titleLiked;
+            }
+
+            String liked = "";
+            for (String newDatum : newData) {
+                liked += newDatum + ",";
+            }
+
+            preparedStatement.setString(1, liked);
+
+        }
+        preparedStatement.setString(2, name);
+        preparedStatement.executeUpdate();
+
+
+        preparedStatement.close();
+        connection.close();
+    }
 }

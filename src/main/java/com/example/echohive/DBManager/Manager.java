@@ -103,6 +103,25 @@ public class Manager {
             System.out.println(e.getMessage());
         }
     }
+
+    public static String[] getTitlesOfLikedSongsByName(String name){
+        String[] data = null;
+        try{
+            data = Users.getTitlesOfLikedSongsByName(name);
+        }catch (SQLException e){
+            System.out.println(e.getMessage());
+        }
+
+        return data;
+    }
+
+    public static void addLikedSongsByName(String name, String titleLiked){
+        try{
+            Users.addLikedSongsByName(name, titleLiked);
+        }catch (SQLException e){
+            System.out.println(e.getMessage());
+        }
+    }
     //endregion
 
     public static void addSong(String title, String author, File song){

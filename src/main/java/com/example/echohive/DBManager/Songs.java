@@ -38,8 +38,13 @@ public class Songs {
 
         ResultSet rs = preparedStatement.executeQuery();
 
-        if (!rs.isBeforeFirst())
+        if (!rs.isBeforeFirst()) {
+            connection.close();
+            preparedStatement.close();
+            rs.close();
+
             return null;
+        }
 
         path = rs.getString("path");
 
