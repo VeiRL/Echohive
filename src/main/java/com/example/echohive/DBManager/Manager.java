@@ -117,13 +117,22 @@ public class Manager {
 
     public static void addLikedSongsByName(String name, String titleLiked){
         try{
-            Users.addLikedSongsByName(name, titleLiked);
+            Users.addLikedSongByName(name, titleLiked);
         }catch (SQLException e){
+            System.out.println(e.getMessage());
+        }
+    }
+
+    public static void removeLikedSongByName(String name, String titleLiked){
+        try{
+            Users.removeLikedSongByName(name, titleLiked);
+        } catch (SQLException e){
             System.out.println(e.getMessage());
         }
     }
     //endregion
 
+    //region Songs Table Functions
     public static void addSong(String title, String author, File song){
         try{
             Songs.addSong(title, author, song);
@@ -157,4 +166,5 @@ public class Manager {
             System.out.println(e.getMessage());
         }
     }
+    //endregion
 }

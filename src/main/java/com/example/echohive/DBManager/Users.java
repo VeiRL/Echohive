@@ -1,6 +1,7 @@
 package com.example.echohive.DBManager;
 
 import java.sql.*;
+import java.util.Arrays;
 
 public class Users {
     public static void newUser(String name, String email, String password) throws SQLException {
@@ -85,7 +86,7 @@ public class Users {
         return data;
     }
 
-    public static void addLikedSongsByName(String name, String titleLiked) throws SQLException{
+    public static void addLikedSongByName(String name, String titleLiked) throws SQLException{
         Connection connection = DriverManager.getConnection(Manager.dbLocation);
         PreparedStatement preparedStatement = connection.prepareStatement("UPDATE Users SET liked = ? WHERE name = ?");
 
@@ -102,17 +103,44 @@ public class Users {
                 else newData[i] = titleLiked;
             }
 
-            String liked = "";
+            StringBuilder liked = new StringBuilder();
             for (String newDatum : newData) {
-                liked += newDatum + ",";
+                liked.append(newDatum).append(",");
             }
 
-            preparedStatement.setString(1, liked);
+            preparedStatement.setString(1, liked.toString());
 
         }
         preparedStatement.setString(2, name);
         preparedStatement.executeUpdate();
 
+
+        preparedStatement.close();
+        connection.close();
+    }
+
+    public static void removeLikedSongByName(String name, String titleLiked) throws SQLException{
+        Connection connection = DriverManager.getConnection(Manager.dbLocation);
+        PreparedStatement preparedStatement = connection.prepareStatement("UPDATE Users SET liked = ? WHERE name = ?");
+
+        String[] data = getTitlesOfLikedSongsByName(name);
+        if (data != null){
+            if (Arrays.asList(data).contains(titleLiked)){
+                StringBuilder dataStringB = new StringBuilder();
+                for (String dt : data){
+                    dataStringB.append(dt).append(",");
+                }
+                String dataString = dataStringB.toString().replaceFirst(titleLiked + ",", "");
+
+                if (dataString.isEmpty())
+                    preparedStatement.setString(1, null);
+                else preparedStatement.setString(1, dataString);
+
+                preparedStatement.setString(2, name);
+
+                preparedStatement.executeUpdate();
+            }
+        }
 
         preparedStatement.close();
         connection.close();
