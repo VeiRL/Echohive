@@ -2,6 +2,7 @@ module com.example.echohive {
     requires javafx.controls;
     requires javafx.fxml;
     requires javafx.graphics;
+    requires javafx.media;
     requires java.sql;
 
 
