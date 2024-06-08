@@ -3,7 +3,7 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.Slider?>
 <?import javafx.scene.image.ImageView?>
@@ -62,32 +62,8 @@
                   <Font name="System Bold" size="12.0" />
                </font>
             </Button>
+            <ListView layoutX="361.0" layoutY="55.0" prefHeight="407.0" prefWidth="1041.0" />
          </children></AnchorPane>
-      <ScrollPane layoutX="353.0" layoutY="208.0" prefHeight="472.0" prefWidth="924.0">
-        <content>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="1089.0" prefWidth="895.0">
-               <children>
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" height="200.0" layoutX="33.0" layoutY="24.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" height="200.0" layoutX="233.0" layoutY="24.0" stroke="BLACK" strokeType="INSIDE" width="200.0" AnchorPane.leftAnchor="253.0" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" height="200.0" layoutX="253.0" layoutY="24.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" height="200.0" layoutX="696.0" layoutY="24.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" height="200.0" layoutX="476.0" layoutY="24.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" height="200.0" layoutX="476.0" layoutY="235.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" height="200.0" layoutX="696.0" layoutY="235.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" height="200.0" layoutX="253.0" layoutY="235.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" height="200.0" layoutX="33.0" layoutY="235.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" height="200.0" layoutX="35.0" layoutY="670.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" height="200.0" layoutX="255.0" layoutY="670.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" height="200.0" layoutX="698.0" layoutY="670.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" height="200.0" layoutX="478.0" layoutY="670.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" height="200.0" layoutX="478.0" layoutY="459.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" height="200.0" layoutX="698.0" layoutY="459.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" height="200.0" layoutX="255.0" layoutY="459.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" height="200.0" layoutX="35.0" layoutY="459.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
-               </children>
-            </AnchorPane>
-        </content>
-      </ScrollPane>
       <Pane layoutX="37.0" layoutY="644.0" prefHeight="62.0" prefWidth="1394.0" style="-fx-background-color: white; -fx-border-radius: 35; -fx-background-radius: 35;">
          <children>
             <Slider layoutX="403.0" layoutY="24.0" prefHeight="14.0" prefWidth="726.0" />

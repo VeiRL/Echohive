@@ -1,17 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.effect.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.shape.*?>
-<?import javafx.scene.text.*?>
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: orange;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.echohive.Search">
+<AnchorPane prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: orange;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.echohive.Search">
    <children>
       <AnchorPane prefHeight="720.0" prefWidth="323.0" style="-fx-background-color: #1F1B24;">
          <children>
@@ -50,31 +52,6 @@
             <Pane layoutX="-100.0" layoutY="-15.0" prefHeight="200.0" prefWidth="200.0" />
          </children>
       </AnchorPane>
-      <ScrollPane layoutX="358.0" layoutY="79.0" prefHeight="611.0" prefWidth="932.0">
-         <content>
-            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="1089.0" prefWidth="895.0">
-               <children>
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" height="200.0" layoutX="33.0" layoutY="24.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" height="200.0" layoutX="233.0" layoutY="24.0" stroke="BLACK" strokeType="INSIDE" width="200.0" AnchorPane.leftAnchor="253.0" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" height="200.0" layoutX="253.0" layoutY="24.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" height="200.0" layoutX="696.0" layoutY="24.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" height="200.0" layoutX="476.0" layoutY="24.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" height="200.0" layoutX="476.0" layoutY="235.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" height="200.0" layoutX="696.0" layoutY="235.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" height="200.0" layoutX="253.0" layoutY="235.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" height="200.0" layoutX="33.0" layoutY="235.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" height="200.0" layoutX="35.0" layoutY="670.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" height="200.0" layoutX="255.0" layoutY="670.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" height="200.0" layoutX="698.0" layoutY="670.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" height="200.0" layoutX="478.0" layoutY="670.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" height="200.0" layoutX="478.0" layoutY="459.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" height="200.0" layoutX="698.0" layoutY="459.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" height="200.0" layoutX="255.0" layoutY="459.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" height="200.0" layoutX="35.0" layoutY="459.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
-               </children>
-            </AnchorPane>
-         </content>
-      </ScrollPane>
       <Pane layoutX="44.0" layoutY="644.0" prefHeight="62.0" prefWidth="1222.0" style="-fx-background-color: white; -fx-border-radius: 35; -fx-background-radius: 35;">
          <children>
             <Slider layoutX="403.0" layoutY="24.0" prefHeight="14.0" prefWidth="726.0" />
@@ -94,5 +71,6 @@
       </Pane>
       <TextField alignment="CENTER" layoutX="371.0" layoutY="14.0" prefHeight="45.0" prefWidth="888.0" promptText="Search" style="-fx-background-radius: 50; -fx-border-radius: 50;" />
       <ImageView fitHeight="45.0" fitWidth="51.0" layoutX="1191.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" />
+      <ListView layoutX="371.0" layoutY="100.0" prefHeight="521.0" prefWidth="888.0" />
    </children>
 </AnchorPane>
