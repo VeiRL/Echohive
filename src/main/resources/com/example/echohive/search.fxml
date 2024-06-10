@@ -5,19 +5,22 @@
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.Slider?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
-<?import javafx.scene.shape.Circle?>
-<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: orange;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.echohive.Search">
    <children>
       <AnchorPane prefHeight="720.0" prefWidth="323.0" style="-fx-background-color: #1F1B24;">
          <children>
-            <Circle fill="DODGERBLUE" layoutX="162.0" layoutY="142.0" radius="100.0" stroke="BLACK" strokeType="INSIDE" />
+            <ImageView fitHeight="284.0" fitWidth="289.0" layoutX="15.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Imagens/Icon/1.png" />
+               </image>
+            </ImageView>
             <Label alignment="CENTER" layoutX="62.0" layoutY="251.0" prefHeight="37.0" prefWidth="200.0" text="Usuario" textAlignment="CENTER" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="27.0" />
@@ -56,17 +59,21 @@
          <children>
             <Slider layoutX="403.0" layoutY="24.0" prefHeight="14.0" prefWidth="726.0" />
             <Label layoutX="1154.0" layoutY="23.0" text="00:00" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" height="45.0" layoutX="31.0" layoutY="9.0" stroke="BLACK" strokeType="INSIDE" width="45.0" />
-            <Label layoutX="84.0" layoutY="7.0" prefHeight="25.0" prefWidth="66.0" text="Musica">
-               <font>
-                  <Font size="17.0" />
-               </font>
-            </Label>
-            <Label layoutX="84.0" layoutY="27.0" prefHeight="25.0" prefWidth="66.0" text="Autor">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </Label>
+            <ImageView id="play" fitHeight="54.0" fitWidth="72.0" layoutX="102.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Imagens/Icon/play.png" />
+               </image>
+            </ImageView>
+            <ImageView id="pause" fitHeight="54.0" fitWidth="72.0" layoutX="164.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Imagens/Icon/pause.png" />
+               </image>
+            </ImageView>
+            <ImageView id="like" fitHeight="54.0" fitWidth="72.0" layoutX="42.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Imagens/Icon/like.png" />
+               </image>
+            </ImageView>
          </children>
       </Pane>
       <TextField alignment="CENTER" layoutX="371.0" layoutY="14.0" prefHeight="45.0" prefWidth="888.0" promptText="Search" style="-fx-background-radius: 50; -fx-border-radius: 50;" />
