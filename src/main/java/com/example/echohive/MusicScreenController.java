@@ -8,7 +8,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.media.MediaPlayer;
 import javafx.scene.shape.Polygon;
-import javafx.scene.media.Media;
 import javafx.scene.layout.AnchorPane;
 
 public class MusicScreenController extends AnchorPane {
@@ -28,7 +27,16 @@ public class MusicScreenController extends AnchorPane {
     @FXML
     private Label labelMusicTitle;
 
+    @FXML
     private String songLocation;
+
+    public String getSongLocation() {
+        return songLocation;
+    }
+
+    public void setSongLocation(String songLocation) {
+        this.songLocation = songLocation;
+    }
 
     public MusicScreenController(String author, String title, String songpath) {
 
@@ -38,20 +46,11 @@ public class MusicScreenController extends AnchorPane {
         fxmlLoader.setController(this);
 
         try {
+            labelMusicAuthor.setText(author);
+            labelMusicTitle.setText(title);
             fxmlLoader.load();
         } catch (IOException exception) {
             throw new RuntimeException(exception);
         }
-        
-        initElements();
-    }
-
-    void initElements() {
-        buttonPlay.onMouseClickedProperty().set(event -> playSong());
-
-    }
-
-    void playSong() {
-        MediaPlayer player = new MediaPlayer(null);
     }
 }
