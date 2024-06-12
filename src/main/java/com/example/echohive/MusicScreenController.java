@@ -39,16 +39,15 @@ public class MusicScreenController extends AnchorPane {
     }
 
     public MusicScreenController(String author, String title, String songpath) {
-
-        songLocation = songpath;
-        FXMLLoader fxmlLoader = new FXMLLoader(Echohive.class.getResource("MusicScreen.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("MusicScreen.fxml"));
         fxmlLoader.setRoot(this);
         fxmlLoader.setController(this);
 
         try {
+            fxmlLoader.load();
+            songLocation = songpath;
             labelMusicAuthor.setText(author);
             labelMusicTitle.setText(title);
-            fxmlLoader.load();
         } catch (IOException exception) {
             throw new RuntimeException(exception);
         }

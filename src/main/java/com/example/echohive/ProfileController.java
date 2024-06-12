@@ -20,10 +20,7 @@ import javafx.scene.control.Hyperlink;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.Slider;
-import javafx.scene.layout.ColumnConstraints;
-import javafx.scene.layout.GridPane;
-import javafx.scene.layout.Priority;
-import javafx.scene.layout.RowConstraints;
+import javafx.scene.layout.*;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.scene.media.MediaPlayer.Status;
@@ -54,8 +51,6 @@ public class ProfileController implements Initializable {
 
     @FXML
     private Label username;
-
-    //MediaPlayer mp = new MediaPlayer(null);
 
     public void initialize(URL location, ResourceBundle resources) {
         musicListInstance();
@@ -101,7 +96,7 @@ public class ProfileController implements Initializable {
             connection.close();
 
         } catch (SQLException e) {
-            e.printStackTrace();
+            System.out.println(e.getMessage());
         }
     }
 
