@@ -71,7 +71,7 @@ public class SendMscController {
     public void fileExplorer() throws IOException{
         try {
             Stage stage = new Stage();
-            File musicDir = new File(System.getProperty("user.home") + System.getProperty("file.separator") + "Music");
+            File musicDir = new File(System.getProperty("user.home"));
             FileChooser fileChooser = new FileChooser();
             FileChooser.ExtensionFilter filter = new FileChooser.ExtensionFilter(
                                                 "Music files", "*.wav", "*.mp3", "*.m4a", "*.flac");

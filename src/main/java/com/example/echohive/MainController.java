@@ -6,7 +6,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Hyperlink;
-import javafx.scene.control.Label;
 import javafx.stage.Stage;
 import javafx.scene.control.Button;
 
@@ -25,15 +24,6 @@ public class MainController {
         try {
             Parent root = FXMLLoader.load(Echohive.class.getResource(sceneName));
             button.getScene().setRoot(root);    
-        } catch (Exception e) {
-           System.out.println("Failed to switch scenes: " + e);
-        }
-    }
-
-    public static void switchScenes(String sceneName, Label label) throws IOException {
-        try {
-            Parent root = FXMLLoader.load(Echohive.class.getResource(sceneName));
-            label.getScene().setRoot(root);    
         } catch (Exception e) {
            System.out.println("Failed to switch scenes: " + e);
         }

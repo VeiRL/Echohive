@@ -3,12 +3,13 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.Slider?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
@@ -17,6 +18,31 @@
    <children>
       <AnchorPane layoutY="164.0" prefHeight="556.0" prefWidth="1483.0" style="-fx-background-color: #1F1B24;">
          <children>
+            <BorderPane layoutX="-1.0" layoutY="-164.0" prefHeight="720.0" prefWidth="1483.0">
+               <bottom>
+                  <Pane prefHeight="62.0" prefWidth="1394.0" style="-fx-background-color: white; -fx-border-radius: 35; -fx-background-radius: 35;" BorderPane.alignment="CENTER">
+                     <children>
+                        <Slider fx:id="musicSlider" layoutX="403.0" layoutY="24.0" prefHeight="14.0" prefWidth="726.0" />
+                        <Label fx:id="timeLabel" layoutX="1328.0" layoutY="23.0" text="00:00" />
+                        <ImageView id="play" fitHeight="54.0" fitWidth="72.0" layoutX="108.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@Imagens/Icon/play.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView id="pause" fitHeight="54.0" fitWidth="72.0" layoutX="170.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@Imagens/Icon/pause.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView id="like" fitHeight="54.0" fitWidth="72.0" layoutX="48.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@Imagens/Icon/like.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+               </bottom>
+            </BorderPane>
             <Label fx:id="username" alignment="CENTER" layoutX="76.0" layoutY="166.0" prefHeight="37.0" prefWidth="200.0" text="Usuario" textAlignment="CENTER" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="27.0" />
@@ -60,33 +86,12 @@
                   <Font name="System Bold" size="12.0" />
                </font>
             </Button>
-            <ListView layoutX="361.0" layoutY="55.0" prefHeight="407.0" prefWidth="1041.0" />
             <ImageView fitHeight="194.0" fitWidth="200.0" layoutX="79.0" layoutY="-12.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@Imagens/Icon/1.png" />
                </image>
             </ImageView>
+            <ScrollPane fx:id="scroll" fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" layoutX="361.0" layoutY="55.0" prefHeight="407.0" prefWidth="1042.0" />
          </children></AnchorPane>
-      <Pane layoutX="37.0" layoutY="644.0" prefHeight="62.0" prefWidth="1394.0" style="-fx-background-color: white; -fx-border-radius: 35; -fx-background-radius: 35;">
-         <children>
-            <Slider layoutX="403.0" layoutY="24.0" prefHeight="14.0" prefWidth="726.0" />
-            <Label layoutX="1328.0" layoutY="23.0" text="00:00" />
-            <ImageView id="play" fitHeight="54.0" fitWidth="72.0" layoutX="108.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@Imagens/Icon/play.png" />
-               </image>
-            </ImageView>
-            <ImageView id="pause" fitHeight="54.0" fitWidth="72.0" layoutX="170.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@Imagens/Icon/pause.png" />
-               </image>
-            </ImageView>
-            <ImageView id="like" fitHeight="54.0" fitWidth="72.0" layoutX="48.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@Imagens/Icon/like.png" />
-               </image>
-            </ImageView>
-         </children>
-      </Pane>
    </children>
 </AnchorPane>

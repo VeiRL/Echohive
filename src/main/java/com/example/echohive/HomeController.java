@@ -8,7 +8,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Hyperlink;
 import javafx.scene.control.Label;
-import javafx.scene.shape.Circle;
+import javafx.scene.image.ImageView;
 
 public class HomeController {
 
@@ -19,7 +19,7 @@ public class HomeController {
     private Hyperlink username;
 
     @FXML
-    private Circle userProfilePic;
+    private ImageView userProfilePic;
 
     @FXML
     private Label usrShortDesc;
