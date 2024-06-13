@@ -43,6 +43,7 @@ public class LoginController {
 
         //Checking for username in DB
         if (username.equals(data[0]) && password.equals(data[3])) {
+            Context.getInstance().currentUser().setUser(loginUserField.getText());
             MainController.switchScenes("Home.fxml", buttonLogin);
         //Checking for blank fields
         } else if (username.equals("") && password.equals("")) {

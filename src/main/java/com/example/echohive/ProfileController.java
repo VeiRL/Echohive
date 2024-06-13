@@ -53,6 +53,7 @@ public class ProfileController implements Initializable {
     private Label username;
 
     public void initialize(URL location, ResourceBundle resources) {
+        username.setText(Context.getInstance().currentUser().getUser());
         musicListInstance();
     } 
 
@@ -100,6 +101,7 @@ public class ProfileController implements Initializable {
         }
     }
 
+    // código para fazer o slider de musica do MusicPlayer acompanhar a musica
 /*     public void sliderAndTime() throws IOException {
         
         mp.setOnReady(() -> {

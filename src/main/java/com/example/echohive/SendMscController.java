@@ -26,9 +26,6 @@ public class SendMscController {
     private TextField musicTitle;
 
     @FXML
-    private TextField musicAuthor;
-
-    @FXML
     private Button searchFiles;
 
     @FXML
@@ -39,7 +36,7 @@ public class SendMscController {
     public void uploadSong() {
         String[] mscData = new String[2];
         String title = musicTitle.getText();
-        String author = musicAuthor.getText();
+        String author = Context.getInstance().currentUser().getUser();
         
         try {
             Connection con = DriverManager.getConnection(Manager.dbLocation);
@@ -54,13 +51,13 @@ public class SendMscController {
             if (rs.next() && author.equals(mscData[1]) && !musicTitle.getText().isEmpty()) {
                 sendMscErrorDisplay.setText("Autor já tem musica com esse titulo");
             //Check for empty fields
-            } else if (musicTitle.getText().isEmpty() || musicAuthor.getText().isEmpty()) {
-                sendMscErrorDisplay.setText("Há um ou mais campos vazios");
+            } else if (musicTitle.getText().isEmpty()) {
+                sendMscErrorDisplay.setText("A música precisa de um titulo");
             //Check if file is missing
             } else if (!file.exists()) {
                 sendMscErrorDisplay.setText("Não há arquivos selecionados");
             } else {
-                Manager.addSong(title, author, file);   
+                Manager.addSong(title, author, file);
             }
         } catch (SQLException e) {
             System.out.println("Failed to add music: " + e);
@@ -79,6 +76,12 @@ public class SendMscController {
             fileChooser.getExtensionFilters().add(filter);
             fileChooser.setTitle("Selecione um arquivo");
             file = fileChooser.showOpenDialog(stage);
+            if (file != null) {
+                searchFiles.setStyle("-fx-border-radius:34;");
+                searchFiles.setStyle("-fx-background-radius:34;");
+                searchFiles.setText("Arquivo Enviado");
+                searchFiles.setDisable(true);   
+            }
 
         } catch(Exception e) {
             System.out.println("Failed to open file chooser: " + e);
