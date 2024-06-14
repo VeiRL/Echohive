@@ -23,6 +23,9 @@ public class SendMscController {
     private Label sendMscErrorDisplay;
 
     @FXML
+    private Stage sendMscStage;
+
+    @FXML
     private TextField musicTitle;
 
     @FXML
@@ -58,6 +61,10 @@ public class SendMscController {
                 sendMscErrorDisplay.setText("Não há arquivos selecionados");
             } else {
                 Manager.addSong(title, author, file);
+                con.close();
+                pst.close();
+                rs.close();
+                sendMscStage.close();
             }
         } catch (SQLException e) {
             System.out.println("Failed to add music: " + e);

@@ -2,18 +2,20 @@
 
 <?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.Slider?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: orange;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.echohive.HomeController">
    <children>
+      <ScrollPane fx:id="scroll" hbarPolicy="NEVER" layoutX="348.0" layoutY="76.0" prefHeight="550.0" prefWidth="895.0" />
       <AnchorPane prefHeight="720.0" prefWidth="323.0" style="-fx-background-color: #1F1B24;">
          <children>
             <ImageView fx:id="userProfilePic" fitHeight="272.0" fitWidth="274.0" layoutX="24.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
@@ -45,7 +47,7 @@
             <HBox layoutX="12.0" layoutY="395.0" prefHeight="50.0" prefWidth="289.0">
                <children>
                   <ImageView fitHeight="54.0" fitWidth="72.0" pickOnBounds="true" preserveRatio="true" />
-                  <Hyperlink fx:id="searchButton" alignment="CENTER" prefHeight="50.0" prefWidth="150.0" style="-fx-border-color: transparent;" text="Search" textFill="WHITE">
+                  <Hyperlink fx:id="searchButton" alignment="CENTER" onAction="#homeToSearch" prefHeight="50.0" prefWidth="150.0" style="-fx-border-color: transparent;" text="Search" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="21.0" />
                      </font>
@@ -54,33 +56,38 @@
             </HBox>
             <Pane layoutX="-100.0" layoutY="-15.0" prefHeight="200.0" prefWidth="200.0" />
          </children></AnchorPane>
+      <BorderPane layoutY="650.0" prefHeight="70.0" prefWidth="1280.0">
+         <bottom>
+            <Pane prefHeight="62.0" prefWidth="1394.0" style="-fx-background-color: white; -fx-border-radius: 35; -fx-background-radius: 35;" BorderPane.alignment="CENTER">
+               <children>
+                  <Slider fx:id="musicSlider" layoutX="403.0" layoutY="24.0" prefHeight="14.0" prefWidth="726.0" />
+                  <ImageView id="play" fx:id="playIco" fitHeight="54.0" fitWidth="72.0" layoutX="108.0" layoutY="4.0" onMouseClicked="#playClicker" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Imagens/Icon/play.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView id="pause" fx:id="pauseIco" fitHeight="54.0" fitWidth="72.0" layoutX="170.0" layoutY="4.0" onMouseClicked="#pauseClicker" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Imagens/Icon/pause.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView id="like" fitHeight="54.0" fitWidth="72.0" layoutX="48.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Imagens/Icon/like.png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="timeLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="1141.0" layoutY="23.0" prefHeight="17.0" prefWidth="72.0" text="00:00" />
+                  <Label layoutX="1199.0" layoutY="23.0" text="/" />
+                  <Label fx:id="durationLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="1213.0" layoutY="22.0" text="00:00" textAlignment="CENTER" />
+               </children>
+            </Pane>
+         </bottom>
+      </BorderPane>
       <Label alignment="TOP_LEFT" layoutX="348.0" layoutY="20.0" prefHeight="39.0" prefWidth="222.0" text="Músicas curtidas" textAlignment="CENTER">
          <font>
             <Font name="System Bold" size="27.0" />
          </font>
       </Label>
       <Pane layoutX="348.0" layoutY="53.0" prefHeight="6.0" prefWidth="222.0" style="-fx-background-color: black; -fx-border-radius: 50; -fx-background-radius: 50;" />
-      <Pane layoutX="37.0" layoutY="644.0" prefHeight="62.0" prefWidth="1222.0" style="-fx-background-color: white; -fx-border-radius: 35; -fx-background-radius: 35;">
-         <children>
-            <Slider layoutX="403.0" layoutY="24.0" prefHeight="14.0" prefWidth="726.0" />
-            <Label layoutX="1154.0" layoutY="23.0" text="00:00" />
-            <ImageView id="play" fitHeight="54.0" fitWidth="72.0" layoutX="114.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@Imagens/Icon/play.png" />
-               </image>
-            </ImageView>
-            <ImageView id="pause" fitHeight="54.0" fitWidth="72.0" layoutX="176.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@Imagens/Icon/pause.png" />
-               </image>
-            </ImageView>
-            <ImageView id="like" fitHeight="54.0" fitWidth="72.0" layoutX="54.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@Imagens/Icon/like.png" />
-               </image>
-            </ImageView>
-         </children>
-      </Pane>
-      <ListView layoutX="348.0" layoutY="76.0" prefHeight="549.0" prefWidth="895.0" />
    </children>
 </AnchorPane>

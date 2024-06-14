@@ -12,9 +12,6 @@ import java.sql.SQLException;
 
 import com.example.echohive.DBManager.Manager;
 
-import javafx.beans.binding.Bindings;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
@@ -23,9 +20,9 @@ import javafx.scene.control.Hyperlink;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.Slider;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
-import javafx.util.Duration;
 
 public class ProfileController implements Initializable {
  
@@ -36,10 +33,19 @@ public class ProfileController implements Initializable {
     private Button importSongs;
 
     @FXML
+    private ImageView pauseIco;
+
+    @FXML
+    private ImageView playIco;
+
+    @FXML
     private Slider musicSlider;
 
     @FXML
     private Label timeLabel;
+
+    @FXML
+    private Label durationLabel;
 
     @FXML
     private Hyperlink homeButton;
@@ -59,6 +65,7 @@ public class ProfileController implements Initializable {
     } 
 
     public void musicListInstance() {
+        int gridCol = 0, gridRow = 0;
         ColumnConstraints columnConstraints = new ColumnConstraints();
         RowConstraints rowConstraints = new RowConstraints();
         columnConstraints.setHgrow(Priority.NEVER);
@@ -85,11 +92,26 @@ public class ProfileController implements Initializable {
             while (rs.next()) {
                 System.out.println("Adicionando id " + rs.getString(1) + " das musicas ao idList");
                 idList.add(rs.getString(1));
+                }
+
+                rs = statement.executeQuery(sql);
+
                 for(String lst: idList) {
+                    rs.next();
                     var msc = new MusicScreenController(rs.getString(3), rs.getString(2), rs.getString(4));
                     gp.setPadding(new Insets(10));
-                    gp.getChildren().add(msc);
-                }
+                    gp.setHgap(5);
+                    gp.setVgap(5);
+
+                    gp.add(msc, gridCol, gridRow);
+                    gridCol++;
+
+                    if(gridCol > 3) {
+                        //Reset Column
+                        gridCol = 0;
+                        //Next Row
+                        gridRow++;
+                    }
             }
 
             scroll.setContent(gp);
@@ -104,33 +126,11 @@ public class ProfileController implements Initializable {
         }
 
         Context.getInstance().slider = musicSlider;
+        Context.getInstance().currentTimeLabel = timeLabel;
+        Context.getInstance().maxTimeLabel = durationLabel;
     }
 
-    // código para fazer o slider de musica do MusicPlayer acompanhar a musica
-/*     public void sliderAndTime() throws IOException {
-        
-        mp.setOnReady(() -> {
-            timeLabel.textProperty().bind(
-                Bindings.createStringBinding(() -> {
-                    Duration time = mp.getCurrentTime();
-                    return String.format("%4d:%02d:%04.1f", 
-                        (int) time.toHours(),
-                        (int) time.toMinutes() % 60,
-                        (int) time.toSeconds() % 3600);
-                }, mp.currentTimeProperty()));
 
-            musicSlider.maxProperty().bind(
-                Bindings.createDoubleBinding(() -> mp.getTotalDuration().toSeconds(),
-                mp.totalDurationProperty()));
-            mp.currentTimeProperty().addListener((observable, oldValue, newValue) -> {
-                musicSlider.setValue(newValue.toSeconds());
-            });
-            musicSlider.valueProperty().addListener((observable, oldValue, newValue) -> {
-                mp.seek(Duration.seconds(newValue.doubleValue()));
-            });
-        });
-    } */
-    
     public void switchToHome() throws IOException {
         MainController.switchScenes("Home.fxml", homeButton);
     }
