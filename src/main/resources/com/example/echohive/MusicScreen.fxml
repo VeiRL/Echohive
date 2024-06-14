@@ -7,7 +7,7 @@
 <?import javafx.scene.text.Font?>
 
 
-<fx:root type="javafx.scene.layout.AnchorPane" fx:id="musicWindow" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="200.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root type="javafx.scene.layout.AnchorPane" fx:id="musicWindow" style="-fx-background-color: #FED929;" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="200.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Button fx:id="buttonPlay" layoutX="136.0" layoutY="133.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: #FED929; -fx-border-radius: 40; -fx-background-radius: 40;" />
       <Polygon fx:id="playIcon" fill="WHITE" layoutX="203.0" layoutY="163.0" points="-50.0, 12.199996948242188, -27.20001220703125, -3.0000152587890625, -50.0, -18.800003051757812" stroke="WHITE" strokeType="INSIDE" />

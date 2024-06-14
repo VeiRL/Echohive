@@ -22,14 +22,14 @@
                <bottom>
                   <Pane prefHeight="62.0" prefWidth="1394.0" style="-fx-background-color: white; -fx-border-radius: 35; -fx-background-radius: 35;" BorderPane.alignment="CENTER">
                      <children>
-                        <Slider fx:id="musicSlider" layoutX="403.0" layoutY="24.0" prefHeight="14.0" prefWidth="726.0" />
-                        <Label fx:id="timeLabel" layoutX="1328.0" layoutY="23.0" text="00:00" />
-                        <ImageView id="play" fitHeight="54.0" fitWidth="72.0" layoutX="108.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+                        <Slider fx:id="musicSlider"  layoutX="403.0" layoutY="24.0" prefHeight="14.0" prefWidth="726.0" />
+                        <!-- <Label fx:id="timeLabel" layoutX="1328.0" layoutY="23.0" text="00:00" /> -->
+                        <ImageView id="play" onMouseClicked="#playClicker" fitHeight="54.0" fitWidth="72.0" layoutX="108.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@Imagens/Icon/play.png" />
                            </image>
                         </ImageView>
-                        <ImageView id="pause" fitHeight="54.0" fitWidth="72.0" layoutX="170.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView id="pause" onMouseClicked="#pauseClicker" fitHeight="54.0" fitWidth="72.0" layoutX="170.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@Imagens/Icon/pause.png" />
                            </image>

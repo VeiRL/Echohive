@@ -1,11 +1,13 @@
 package com.example.echohive;
 
+import java.io.File;
 import java.io.IOException;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.scene.shape.Polygon;
 import javafx.scene.layout.AnchorPane;
@@ -51,5 +53,11 @@ public class MusicScreenController extends AnchorPane {
         } catch (IOException exception) {
             throw new RuntimeException(exception);
         }
+
+        buttonPlay.setOnMouseClicked(_ -> {
+            Context.getInstance().changeMusic(songLocation);
+            Context.getInstance().playSong();
+            Context.getInstance().updateSliderForPlayer();
+        });
     }
 }

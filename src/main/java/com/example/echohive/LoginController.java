@@ -39,14 +39,14 @@ public class LoginController {
     public void loginToHome(ActionEvent event) throws IOException{
         String username = loginUserField.getText();
         String password = loginPasswordField.getText();
-        String data[] = Manager.getUserDataByName(username);
+        String[] data = Manager.getUserDataByName(username);
 
         //Checking for username in DB
         if (username.equals(data[0]) && password.equals(data[3])) {
             Context.getInstance().currentUser().setUser(loginUserField.getText());
             MainController.switchScenes("Home.fxml", buttonLogin);
         //Checking for blank fields
-        } else if (username.equals("") && password.equals("")) {
+        } else if (username.isEmpty() && password.isEmpty()) {
             loginErrorDisplay.setText("Usuário e senha vazios");
             loginPasswordField.setStyle("-fx-text-box-border: red ; -fx-focus-color: red;");
             loginUserField.setStyle("-fx-text-box-border: red ; -fx-focus-color: red;");

@@ -13,17 +13,18 @@ import java.sql.SQLException;
 import com.example.echohive.DBManager.Manager;
 
 import javafx.beans.binding.Bindings;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.geometry.Insets;
 import javafx.scene.control.Button;
 import javafx.scene.control.Hyperlink;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.Slider;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
-import javafx.scene.media.Media;
-import javafx.scene.media.MediaPlayer;
-import javafx.scene.media.MediaPlayer.Status;
 import javafx.util.Duration;
 
 public class ProfileController implements Initializable {
@@ -86,11 +87,13 @@ public class ProfileController implements Initializable {
                 idList.add(rs.getString(1));
                 for(String lst: idList) {
                     var msc = new MusicScreenController(rs.getString(3), rs.getString(2), rs.getString(4));
+                    gp.setPadding(new Insets(10));
                     gp.getChildren().add(msc);
                 }
             }
 
             scroll.setContent(gp);
+            scroll.setPannable(true);
 
             rs.close();
             statement.close();
@@ -99,6 +102,8 @@ public class ProfileController implements Initializable {
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
+
+        Context.getInstance().slider = musicSlider;
     }
 
     // código para fazer o slider de musica do MusicPlayer acompanhar a musica
@@ -138,5 +143,12 @@ public class ProfileController implements Initializable {
     public void sendMscPopup() throws IOException {
         MainController.loadPopup("SendMsc.fxml", "Enviar Musica");
     }
-    
+
+    public void playClicker(MouseEvent mouseEvent) {
+        Context.getInstance().playSong();
+    }
+
+    public void pauseClicker(MouseEvent mouseEvent) {
+        Context.getInstance().pauseSong();
+    }
 }
