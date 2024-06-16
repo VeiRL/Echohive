@@ -1,15 +1,18 @@
 package com.example.echohive;
-
+    
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import com.example.echohive.DBManager.Manager;
+import com.example.echohive.DBManager.Songs;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -18,13 +21,10 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
-public class SendMscController {
+public class EditMscController {
 
     @FXML
-    private Label sendMscErrorDisplay;
-
-    @FXML
-    private AnchorPane sendMscStage;
+    private AnchorPane editMscStage;
 
     @FXML
     private TextField musicTitle;
@@ -33,43 +33,39 @@ public class SendMscController {
     private Button searchFiles;
 
     @FXML
-    private Button sendMusic;
+    private Label editMscErrorDisplay;
+
+    @FXML
+    private Button editMusic;
+
+    @FXML
+    private Label title;
 
     public File file;
 
-    public void uploadSong() {
-        Stage stage = (Stage) sendMusic.getScene().getWindow();
-        String[] mscData = new String[2];
-        String title = musicTitle.getText();
-        String author = Context.getInstance().currentUser().getUser();
-        
-        try {
-            Connection con = DriverManager.getConnection(Manager.dbLocation);
-            String sql = "SELECT title, author from Songs WHERE title LIKE ?; ";
-            PreparedStatement pst = con.prepareStatement(sql);
-            pst.setString(1, title);
-            ResultSet rs = pst.executeQuery();
-            mscData[0] = rs.getString("title");
-            mscData[1] = rs.getString("author");
+    @FXML
+    public void editSong() throws IOException {
+        Stage stage = (Stage) editMusic.getScene().getWindow();
+        String oldTitle = Context.getInstance().getOldSongTitle();
 
-            //Check for existing titles for author
-            if (rs.next() && author.equals(mscData[1]) && !musicTitle.getText().isEmpty()) {
-                sendMscErrorDisplay.setText("Autor já tem musica com esse titulo");
+        //Check for existing titles for author
+        try {
+            if (oldTitle.equals(musicTitle.getText()) && !musicTitle.getText().isEmpty()) {
+                editMscErrorDisplay.setText("Autor já tem musica com esse titulo");
             //Check for empty fields
             } else if (musicTitle.getText().isEmpty()) {
-                sendMscErrorDisplay.setText("A música precisa de um titulo");
+                editMscErrorDisplay.setText("A música precisa de um titulo");
             //Check if file is missing
             } else if (!file.exists()) {
-                sendMscErrorDisplay.setText("Não há arquivos selecionados");
+                editMscErrorDisplay.setText("Não há arquivos selecionados");
             } else {
-                Manager.addSong(title, author, file);
-                con.close();
-                pst.close();
-                rs.close();
+                String newFilepathString = "./data/songs" + "/" + file.getName();
+                Files.move(file.toPath(), Paths.get("./data/songs", file.getName()));
+                Manager.setSongDataByTitle(oldTitle, musicTitle.getText(), newFilepathString);
                 stage.close();
             }
-        } catch (SQLException e) {
-            System.out.println("Failed to add music: " + e);
+        } catch (IOException e) {
+            System.out.println("Failed to edit song: " + e);
         }
     }
 

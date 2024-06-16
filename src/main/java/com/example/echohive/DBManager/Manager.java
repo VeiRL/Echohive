@@ -159,9 +159,9 @@ public class Manager {
         }
     }
 
-    public static void setSongTitleByTitle(String title, String newTitle){
+    public static void setSongDataByTitle(String title, String newTitle, String newPath){
         try{
-            Songs.setSongTitleByTitle(title, newTitle);
+            Songs.setSongDataByTitle(title, newTitle, newPath);
         } catch (SQLException e){
             System.out.println(e.getMessage());
         }

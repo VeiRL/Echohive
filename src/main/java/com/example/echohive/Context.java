@@ -2,6 +2,7 @@ package com.example.echohive;
 
 import javafx.beans.binding.Bindings;
 import javafx.beans.property.ReadOnlyObjectProperty;
+import javafx.beans.property.SimpleStringProperty;
 import javafx.scene.control.Label;
 import javafx.scene.control.Slider;
 import javafx.scene.media.Media;
@@ -13,6 +14,15 @@ import java.io.File;
 public class Context {
     
     private final static Context instance = new Context();
+    private SimpleStringProperty oldSongTitle = new SimpleStringProperty();
+
+    public String getOldSongTitle() {
+        return oldSongTitle.get();
+    }
+
+    public void setOldSongTitle(String value) {
+        oldSongTitle.set(value);
+    }
 
     public static Context getInstance() {
         return instance;

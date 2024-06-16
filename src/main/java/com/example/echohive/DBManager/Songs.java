@@ -72,12 +72,13 @@ public class Songs {
         }
     }
 
-    public static void setSongTitleByTitle(String title, String newTitle) throws SQLException{
+    public static void setSongDataByTitle(String title, String newTitle, String newPath) throws SQLException{
         Connection connection = DriverManager.getConnection(Manager.dbLocation);
-        PreparedStatement preparedStatement = connection.prepareStatement("UPDATE Songs SET title = ? WHERE title = ?");
+        PreparedStatement preparedStatement = connection.prepareStatement("UPDATE Songs SET title = ?, path = ? WHERE title = ?");
 
         preparedStatement.setString(1, newTitle);
-        preparedStatement.setString(2, title);
+        preparedStatement.setString(2, newPath);
+        preparedStatement.setString(3, title);
 
         preparedStatement.executeUpdate();
 
