@@ -159,6 +159,17 @@ public class Manager {
         }
     }
 
+    public static String getSongAuthorByTitle(String title){
+        String author = null;
+        try{
+            author = Songs.getSongAuthorByTitle(title);
+        } catch (SQLException e){
+            System.out.println(e.getMessage());
+        }
+
+        return author;
+    }
+
     public static void setSongDataByTitle(String title, String newTitle, String newPath){
         try{
             Songs.setSongDataByTitle(title, newTitle, newPath);

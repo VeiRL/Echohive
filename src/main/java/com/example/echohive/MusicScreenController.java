@@ -65,12 +65,14 @@ public class MusicScreenController extends AnchorPane {
         }
 
         buttonPlay.setOnMouseClicked(_ -> {
+            Context.getInstance().musicName = title;
             Context.getInstance().changeMusic(songLocation);
             Context.getInstance().playSong();
             Context.getInstance().updateSliderForPlayer();
         });
 
         playIcon.setOnMouseClicked(_ -> {
+            Context.getInstance().musicName = title;
             Context.getInstance().changeMusic(songLocation);
             Context.getInstance().playSong();
             Context.getInstance().updateSliderForPlayer();

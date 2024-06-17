@@ -71,7 +71,7 @@
                         <Image url="@Imagens/Icon/pause.png" />
                      </image>
                   </ImageView>
-                  <ImageView id="like" fitHeight="54.0" fitWidth="72.0" layoutX="48.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView id="like" onMouseClicked="#likeClicker" fitHeight="54.0" fitWidth="72.0" layoutX="48.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@Imagens/Icon/like.png" />
                      </image>

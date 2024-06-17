@@ -18,7 +18,6 @@ import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.Slider;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Priority;
@@ -95,13 +94,14 @@ public class HomeController {
             rs = statement.executeQuery(sql);
 
             while (rs.next()) {
-                System.out.println("Adicionando id " + rs.getString(1) + " das musicas ao idList");
-                idList.add(rs.getString(1));
-                }
+                if (isLikedSong(rs.getString(2)))
+                    idList.add(rs.getString(1));
+            }
 
-                rs = statement.executeQuery(sql);
+            rs = statement.executeQuery(sql);
 
-                for(String lst: idList) {
+            for(String _: idList) {
+                if (isLikedSong(rs.getString(2))) {
                     rs.next();
                     var msc = new MusicScreenController(rs.getString(3), rs.getString(2), rs.getString(4));
                     gp.setPadding(new Insets(10));
@@ -111,12 +111,13 @@ public class HomeController {
                     gp.add(msc, gridCol, gridRow);
                     gridCol++;
 
-                    if(gridCol > 3) {
+                    if (gridCol > 3) {
                         //Reset Column
                         gridCol = 0;
                         //Next Row
                         gridRow++;
                     }
+                }
             }
 
             scroll.setContent(gp);
@@ -135,12 +136,34 @@ public class HomeController {
         Context.getInstance().maxTimeLabel = durationLabel;
     }
 
-    public void playClicker(MouseEvent mouseEvent) {
+    private boolean isLikedSong(String title){
+        String[] likeds = Manager.getTitlesOfLikedSongsByName(Context.getInstance().currentUser().getUser());
+        boolean isLiked = false;
+
+        if (likeds == null)
+            return false;
+
+        for (String liked : likeds){
+            if (title.equals(liked)) {
+                isLiked = true;
+                break;
+            }
+        }
+        return isLiked;
+    }
+
+    public void playClicker() {
         Context.getInstance().playSong();
     }
 
-    public void pauseClicker(MouseEvent mouseEvent) {
+    public void pauseClicker() {
         Context.getInstance().pauseSong();
     }
 
+    public void likeClicker() {
+        if(!isLikedSong(Context.getInstance().musicName))
+            Manager.addLikedSongsByName(Context.getInstance().currentUser().getUser(), Context.getInstance().musicName);
+        else if (isLikedSong(Context.getInstance().musicName))
+            Manager.removeLikedSongByName(Context.getInstance().currentUser().getUser(), Context.getInstance().musicName);
+    }
 }

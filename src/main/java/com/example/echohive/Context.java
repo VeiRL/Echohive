@@ -1,7 +1,6 @@
 package com.example.echohive;
 
 import javafx.beans.binding.Bindings;
-import javafx.beans.property.ReadOnlyObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.scene.control.Label;
 import javafx.scene.control.Slider;
@@ -14,7 +13,7 @@ import java.io.File;
 public class Context {
     
     private final static Context instance = new Context();
-    private SimpleStringProperty oldSongTitle = new SimpleStringProperty();
+    private final SimpleStringProperty oldSongTitle = new SimpleStringProperty();
 
     public String getOldSongTitle() {
         return oldSongTitle.get();
@@ -38,6 +37,7 @@ public class Context {
     private boolean isPlayerChanged = false;
     public Slider slider;
     public Label currentTimeLabel, maxTimeLabel;
+    public String musicName;
 
     public void changeMusic(String musicLocation){
         if (player == null){
@@ -60,13 +60,6 @@ public class Context {
         if (player == null) return;
         if (player.getStatus() == MediaPlayer.Status.PLAYING && player != null)
             player.pause();
-    }
-
-    public ReadOnlyObjectProperty<Duration> returnTotalDurationPropertyPlayer(){
-        if (player == null) return null;
-        if (player.getStatus() == MediaPlayer.Status.PLAYING)
-            return player.totalDurationProperty();
-        return null;
     }
 
     public void updateSliderForPlayer(){
@@ -96,13 +89,9 @@ public class Context {
                             player.getTotalDuration().toSeconds(),
                             player.totalDurationProperty()));
 
-            player.currentTimeProperty().addListener((observable, oldValue, newValue) -> {
+            player.currentTimeProperty().addListener((_, _, newValue) -> {
                 slider.setValue(newValue.toSeconds());
             });
-
-            // slider.valueProperty().addListener((observable, oldValue, newValue) -> {
-            //     player.seek(Duration.seconds(newValue.doubleValue()));
-            // });
         });
 
         isPlayerChanged = false;

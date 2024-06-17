@@ -55,6 +55,33 @@ public class Songs {
         return path;
     }
 
+    public static String getSongAuthorByTitle(String title) throws SQLException{
+        String author;
+
+        Connection connection = DriverManager.getConnection(Manager.dbLocation);
+        PreparedStatement preparedStatement = connection.prepareStatement("SELECT author FROM Songs WHERE title = ?");
+
+        preparedStatement.setString(1, title);
+
+        ResultSet rs = preparedStatement.executeQuery();
+
+        if (!rs.isBeforeFirst()) {
+            connection.close();
+            preparedStatement.close();
+            rs.close();
+
+            return null;
+        }
+
+        author = rs.getString("author");
+
+        preparedStatement.close();
+        connection.close();
+        rs.close();
+
+        return author;
+    }
+
     public static void deleteSongByTitle(String title) throws SQLException, IOException{
         File song = new File(Objects.requireNonNull(getSongLocationByTitle(title)));
         if (song.delete()){

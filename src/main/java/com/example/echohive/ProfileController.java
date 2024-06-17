@@ -77,7 +77,7 @@ public class ProfileController implements Initializable {
         gp.getColumnConstraints().add(columnConstraints);
         gp.getRowConstraints().add(rowConstraints);
 
-        ArrayList<String> idList = new ArrayList<String>();
+        ArrayList<String> idList = new ArrayList<>();
         Connection connection;
         String sql;
         Statement statement;
@@ -90,13 +90,14 @@ public class ProfileController implements Initializable {
             rs = statement.executeQuery(sql);
 
             while (rs.next()) {
-                System.out.println("Adicionando id " + rs.getString(1) + " das musicas ao idList");
-                idList.add(rs.getString(1));
-                }
+                if (rs.getString(3).equals(Context.getInstance().currentUser().getUser()))
+                    idList.add(rs.getString(1));
+            }
 
-                rs = statement.executeQuery(sql);
+            rs = statement.executeQuery(sql);
 
-                for(String lst: idList) {
+            for(String _ : idList) {
+                if (rs.getString(3).equals(Context.getInstance().currentUser().getUser())) {
                     rs.next();
                     var msc = new MusicScreenController(rs.getString(3), rs.getString(2), rs.getString(4));
                     gp.setPadding(new Insets(10));
@@ -106,12 +107,13 @@ public class ProfileController implements Initializable {
                     gp.add(msc, gridCol, gridRow);
                     gridCol++;
 
-                    if(gridCol > 3) {
+                    if (gridCol > 3) {
                         //Reset Column
                         gridCol = 0;
                         //Next Row
                         gridRow++;
                     }
+                }
             }
 
             scroll.setContent(gp);
