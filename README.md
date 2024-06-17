@@ -41,5 +41,5 @@
 </ul>
 <p>Para contribuir, entre em contato com a equipe de desenvolvimento ou envie um pull request para o repositório do projeto.</p>
 
-<h2>📄 Licença</h2>
-<p>Este projeto é licenciado sob a Licença MIT.</p>
+<h2>📄 Grupo</h2>
+<p>Filipe Santiago Santos<br>Matheus Gomes Santos<br>Gabriel de Oliveira Pinho</p>
